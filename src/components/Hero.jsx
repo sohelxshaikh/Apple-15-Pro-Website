@@ -25,12 +25,19 @@ const Hero = () => {
   useGSAP(()=> {
     gsap.to('.hero-title',{
       opacity:1,
-      delay:1.5,
+      delay:2,
+
+
+    })
+    gsap.to('#cta',{
+      opacity:1,
+      y:-50,
+      delay:2,
 
 
     })
   },[])
-  
+
   return (
     <section className='w-full nav-height bg-black relative'>
       <div className='h-5/6 w-full flex-center flex-col'>
@@ -42,6 +49,13 @@ const Hero = () => {
             <source src={videoSrc} type='video/mp4' />
           </video>
         </div>
+      </div>
+      <div 
+      id='cta'
+      className='flex flex-col items-center  translate-y-20 opacity-0'
+      >
+        <a href="#highlights" className='btn hover:transition-all'>Buy</a>
+        <p className='font-normal text-xl'>From ₹21483.00/month or ₹134900.00* </p>
       </div>
 
     </section>
